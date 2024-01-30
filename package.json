@@ -1,0 +1,11 @@
+{
+  "name": "javacafe-effective-typescript-study",
+  "version": "1.0.0",
+  "description": "자바카페 이펙티브 타입스크립트 스터디",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CheolWoong Choi",
+  "license": "ISC"
+}
