@@ -80,8 +80,7 @@ import { DeepReadonly } from "ts-essentials";
     const addParagraph = () => {
       if (currPara.length) {
         paragraphs.push(currPara);
-        // paragraphs.push([...currPara]);
-        currPara.length = 0;
+        currPara.length = 0; // 배열을 비움
       }
     };
 
@@ -107,7 +106,6 @@ import { DeepReadonly } from "ts-essentials";
     const addParagraph = () => {
       if (currPara.length) {
         paragraphs.push(currPara);
-        // paragraphs.push([...currPara]);
         currPara.length = 0;
       }
     };
@@ -129,11 +127,13 @@ import { DeepReadonly } from "ts-essentials";
   // 최종 수정
   function parseTaggedText3(lines: string[]): (readonly string[])[] {
     const paragraphs: (readonly string[])[] = [];
+    // const paragraphs: readonly string[][] = [];
     let currPara: readonly string[] = [];
 
     const addParagraph = () => {
       if (currPara.length) {
         paragraphs.push([...currPara]); // currPara의 복사본을 전달
+        // paragraphs.push(currPara); // currPara의 복사본을 전달
         currPara = []; // 배열을 비움
       }
     };
@@ -164,9 +164,7 @@ import { DeepReadonly } from "ts-essentials";
   // 배열의 요소가 객체인 경우 객체의 프로퍼티는 수정할 수 있다.
   const dates: readonly Date[] = [new Date(), new Date()];
   dates.push(new Date());
-
   dates[0].setFullYear(2020);
-
   console.log(dates);
 
   // Readonly 제네릭
@@ -190,6 +188,9 @@ import { DeepReadonly } from "ts-essentials";
   obj = { ...obj, hi: 45 };
   obj = { ...obj, bye: 123 };
 
+  obj2.hi = 45; // 에러
+  obj2 = { ...obj2, hi: 45 };
+
   // DeepReadonly (ts-essentials)
   const o2: DeepReadonly<Outer> = { inner: { x: 0 } };
   o2.inner = { x: 1 }; // 에러
@@ -201,4 +202,15 @@ import { DeepReadonly } from "ts-essentials";
 
   const ra: { readonly x: number } = { x: 1 };
   ra.x = 2; // 에러
+}
+
+// readonly 사용처
+{
+  const ta: readonly number[] = [1, 2, 3];
+  const ta2: { readonly x: string } = { x: "hi", y: "bye" };
+  const ta3: readonly number[] = [1, 2, 3];
+
+  ta2.x = "bye";
+  ta2.y = "hi";
+  ta3[0] = 4;
 }
