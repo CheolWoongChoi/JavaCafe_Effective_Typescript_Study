@@ -114,7 +114,7 @@
 
 // 타입 가드로 타입 좁히기
 {
-  // HTMLElement
+  // 1. HTMLElement
   function isInputElement(el: HTMLElement): el is HTMLInputElement {
     return "value" in el;
   }
@@ -127,7 +127,7 @@
     return el.textContent;
   }
 
-  // 배열에서 어떤 탐색
+  // 2. 배열에서 어떤 탐색
 
   // undefined가 안 걸러짐
   const jackson5 = ["Jackie", "Tito", "Jermaine", "Marlon", "Michael"];
