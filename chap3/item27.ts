@@ -43,7 +43,7 @@ import _ from "lodash";
 }
 
 /**
- * NBA 예제
+ * NBA 예제, 단순(flat) 목록 만들기
  */
 interface BasketballPlayer {
   name: string;
