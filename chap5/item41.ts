@@ -42,7 +42,7 @@
    */
   {
     let val = null;
-
+    val;
     try {
       // someThingDangerous();
       val = 12;
