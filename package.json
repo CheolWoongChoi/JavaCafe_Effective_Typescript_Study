@@ -9,10 +9,12 @@
   "author": "CheolWoong Choi",
   "license": "ISC",
   "devDependencies": {
+    "@types/jsdom": "^21.1.6",
     "@types/lodash": "^4.14.202",
     "ts-essentials": "^9.4.1"
   },
   "dependencies": {
+    "jsdom": "^24.0.0",
     "lodash": "^4.17.21"
   }
 }
