@@ -34,9 +34,9 @@ declare function hash(text: string): number;
     checkPassword: (password: string) => boolean;
 
     constructor(passwordHash: number) {
-      // this.checkPassword = (password: string) => {
-      //   return hash(password) === passwordHash;
-      // };
+      this.checkPassword = (password: string) => {
+        return hash(password) === passwordHash;
+      };
     }
   }
 
