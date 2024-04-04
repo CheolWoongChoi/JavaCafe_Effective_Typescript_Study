@@ -2,11 +2,8 @@
 // @ts-check
 
 {
-  /**
-   * @type {{first: string, last: string}}
-   */
   const person = { first: "Grace", last: "Hopper" };
-  person.firsd;
+  2 * person.first;
 
   /**
    * User 관련
@@ -21,6 +18,9 @@
   /**
    * DOM 관련
    */
+  /** @type {string} */
+  const a = 1;
+
   const ageEl = /**
    * @type {HTMLInputElement}
    */ (document.getElementById("age"));
@@ -31,8 +31,8 @@
 
   /**
    * 엘리먼트의 크기 (픽셀 단위)를 가져 옵니다.
-   * @param {Element} el 해당 엘리먼트
-   * @return {{ width: number, height: number }} 크기
+   * @param {Node} el 해당 엘리먼트
+   * @return {{ w: number, h: number }} 크기
    */
   function getSize(el) {
     const bounds = el.getBoundingClientRect();
